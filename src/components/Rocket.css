@@ -1,0 +1,58 @@
+.rocket-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* above everything */
+  pointer-events: none;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Will be transformed by framer-motion */
+}
+
+.rocket-body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: hoverFloat 2s ease-in-out infinite alternate;
+}
+
+.rocket-body svg {
+  filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.4));
+}
+
+.rocket-exhaust {
+  position: absolute;
+  bottom: -5px;
+  left: 10px;
+  width: 15px;
+  height: 25px;
+  background: linear-gradient(to bottom, #10b981, transparent);
+  border-radius: 50%;
+  filter: blur(2px);
+  animation: thrust 0.1s infinite alternate;
+  transform: rotate(45deg);
+  transform-origin: top center;
+  z-index: -1;
+}
+
+@keyframes hoverFloat {
+  from { transform: translateY(-3px); }
+  to { transform: translateY(3px); }
+}
+
+@keyframes thrust {
+  from { 
+    height: 20px; 
+    opacity: 0.8;
+  }
+  to { 
+    height: 35px; 
+    opacity: 1;
+  }
+}

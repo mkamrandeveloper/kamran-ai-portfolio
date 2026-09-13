@@ -1,0 +1,339 @@
+.neural-section {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background-color: #080c16;
+  color: #f8fafc;
+  padding-top: 80px;
+  padding-bottom: 60px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border-top: 1px solid #1e293b;
+  border-bottom: 1px solid #1e293b;
+}
+
+.neural-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px; /* match the app's width */
+  padding: 0 32px;
+}
+
+/* Typography & Labels */
+.neural-top-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 60px;
+}
+
+.label-text-dark {
+  color: #64748b;
+}
+
+.neural-header-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 120px;
+}
+
+.neural-header-left {
+  flex: 1;
+}
+
+.signature-label {
+  color: #10b981;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.neural-header-center {
+  flex: 2;
+  text-align: center;
+  position: relative;
+}
+
+.neural-title {
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  position: relative;
+  z-index: 1;
+}
+
+.light-text {
+  color: #f8fafc;
+}
+
+.neural-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 200px;
+  background: radial-gradient(ellipse, rgba(16, 185, 129, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.neural-header-right {
+  flex: 1;
+  font-size: 13px;
+  color: #94a3b8;
+  line-height: 1.6;
+  text-align: left;
+  margin-right: 60px; /* prevent collision with tracker */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.neural-desc {
+  max-width: 260px;
+}
+
+/* Process Flow Layout */
+.process-flow {
+  position: relative;
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+.process-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(16, 185, 129, 0.5); /* Green line */
+  z-index: 0;
+}
+
+.moving-dot {
+  position: absolute;
+  top: -3px; /* Center dot on line */
+  left: 0;
+  width: 7px;
+  height: 7px;
+  background-color: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #10b981, 0 0 20px #10b981;
+  animation: moveDot 8s linear infinite; /* Slower speed */
+  z-index: 1;
+}
+
+.moving-dot.delayed {
+  animation-delay: 4s;
+}
+
+@keyframes moveDot {
+  0% { left: 0%; opacity: 0; }
+  5% { opacity: 1; }
+  95% { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+.process-steps {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.process-node {
+  background-color: #0b1120;
+  border: 1px solid #1e293b;
+  padding: 12px;
+  width: 140px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.2); transform: scale(1.1); }
+  50% { box-shadow: 0 0 40px rgba(16, 185, 129, 0.5); transform: scale(1.12); }
+  100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.2); transform: scale(1.1); }
+}
+
+.process-node.active {
+  border-color: #10b981;
+  animation: pulseGlow 3s infinite ease-in-out;
+  background-color: #0f172a;
+  z-index: 2;
+}
+
+.node-id {
+  font-size: 9px;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.process-node.active .node-id {
+  color: #94a3b8;
+}
+
+.node-visual {
+  height: 80px;
+  width: 100%;
+  background-color: transparent;
+  margin-bottom: 12px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.node-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  filter: grayscale(80%) contrast(1.2);
+}
+
+.process-node:hover .node-image,
+.process-node.active .node-image {
+  transform: scale(1.15);
+  filter: grayscale(0%) contrast(1.1);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(16, 185, 129, 0.2);
+  mix-blend-mode: color;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.process-node.active .image-overlay,
+.process-node:hover .image-overlay {
+  opacity: 0;
+}
+
+.node-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+
+.node-status-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #10b981;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.process-node.active .node-status-dot {
+  opacity: 1;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.connector-dot {
+  width: 4px;
+  height: 4px;
+  background-color: #10b981;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Bottom Details */
+.neural-bottom {
+  margin-bottom: 40px;
+}
+
+.node-detail {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.node-detail .bold {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-right: 12px;
+}
+
+.neural-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #1e293b;
+  padding-top: 20px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #64748b;
+}
+
+.system-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #10b981;
+  margin-right: 60px; /* prevent tracker overlap */
+}
+
+/* Neural specific tracker */
+.neural-tracker {
+  top: 100px;
+  height: 250px;
+}
+
+.neural-tracker .tracker-diamond,
+.neural-tracker .tracker-line {
+  border-color: #10b981;
+  background-color: #10b981;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+.neural-tracker .tracker-diamond {
+  background-color: #080c16; /* hollow center */
+}
+
+@media (max-width: 1024px) {
+  .neural-header-area {
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+  
+  .neural-header-left, .neural-header-center, .neural-header-right {
+    text-align: center;
+    margin-right: 0;
+  }
+  
+  .neural-title {
+    font-size: 48px;
+  }
+  
+  .process-steps {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .process-line {
+    width: 1px;
+    height: 100%;
+    left: 50%;
+    top: 0;
+  }
+  
+  .connector-dot {
+    display: none;
+  }
+}

@@ -1,0 +1,35 @@
+:root {
+  --bg-color: #f4f9f9;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-accent: #22c55e;
+  --navbar-bg: #ffffff;
+  --border-color: rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
