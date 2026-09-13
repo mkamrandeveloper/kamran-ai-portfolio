@@ -223,3 +223,31 @@
     text-align: center;
   }
 }
+
+@media (max-width: 768px) {
+  .contact-title {
+    font-size: 42px;
+  }
+  .contact-card {
+    padding: 24px;
+    max-width: 100%;
+  }
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-title {
+    font-size: 36px;
+  }
+  .contact-desc {
+    font-size: 14px;
+  }
+  .contact-card {
+    padding: 16px;
+  }
+  .info-text {
+    font-size: 13px;
+  }
+}

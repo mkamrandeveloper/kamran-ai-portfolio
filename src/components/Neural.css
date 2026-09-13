@@ -337,3 +337,27 @@
     display: none;
   }
 }
+
+@media (max-width: 768px) {
+  .neural-title {
+    font-size: 36px;
+  }
+  .step-card {
+    width: 100%;
+  }
+  .step-number {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .neural-title {
+    font-size: 28px;
+  }
+  .step-title {
+    font-size: 14px;
+  }
+  .step-desc {
+    font-size: 12px;
+  }
+}

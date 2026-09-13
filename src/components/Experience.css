@@ -249,3 +249,37 @@
     font-size: 56px;
   }
 }
+
+@media (max-width: 768px) {
+  .exp-title {
+    font-size: 42px;
+  }
+  .exp-profile-wrapper {
+    width: 250px;
+    right: -100px;
+  }
+  .timeline-container {
+    padding-left: 20px;
+  }
+  .role-title {
+    font-size: 20px;
+  }
+  .company-name {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .exp-title {
+    font-size: 36px;
+  }
+  .role-title {
+    font-size: 18px;
+  }
+  .timeline-desc-list li {
+    font-size: 13px;
+  }
+  .exp-profile-wrapper {
+    display: none;
+  }
+}

@@ -181,3 +181,35 @@
     left: -25%;
   }
 }
+
+@media (max-width: 768px) {
+  .skills-title {
+    font-size: 42px;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .skills-right {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-title {
+    font-size: 36px;
+  }
+  .skill-cat-title {
+    font-size: 14px;
+  }
+  .skill-pill {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+  .skills-right {
+    height: 250px;
+  }
+  .skills-section {
+    padding-bottom: 60px;
+  }
+}

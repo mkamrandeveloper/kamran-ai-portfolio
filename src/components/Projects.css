@@ -342,3 +342,34 @@
     font-size: 56px;
   }
 }
+
+@media (max-width: 768px) {
+  .proj-title {
+    font-size: 42px;
+  }
+  .projects-grid {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+  .proj-card {
+    padding: 24px;
+  }
+  .card-title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .proj-title {
+    font-size: 36px;
+  }
+  .proj-card {
+    padding: 20px;
+  }
+  .card-title {
+    font-size: 18px;
+  }
+  .card-desc {
+    font-size: 13px;
+  }
+}
