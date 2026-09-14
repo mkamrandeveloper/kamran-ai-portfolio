@@ -330,6 +330,7 @@
   
   .proj-header-right {
     text-align: left;
+    margin-right: 0;
   }
 
   .projects-grid {

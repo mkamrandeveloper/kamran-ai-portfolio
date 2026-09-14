@@ -336,6 +336,10 @@
   .connector-dot {
     display: none;
   }
+  
+  .system-status {
+    margin-right: 0;
+  }
 }
 
 @media (max-width: 768px) {
@@ -347,6 +351,10 @@
   }
   .step-number {
     font-size: 16px;
+  }
+  .neural-footer {
+    flex-direction: column;
+    gap: 10px;
   }
 }
 
